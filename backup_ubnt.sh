@@ -13,7 +13,7 @@ dia="`date +%d-%m-%Y`"
 #RUN UBIQUITI COMMAND TO SSH
 for ubnt in $(cat /home/ftp_backup/ubiquiti/ubnt.txt); do
  mkdir  /home/ftp_backup/ubiquiti/$ubnt
- scp -r /root/.ssh/authorized_key admin@$ubnt:/tmp/ /home/ftp_backup/ubiquiti//$ubnt
+ scp -r  admin@$ubnt:/tmp/ /home/ftp_backup/ubiquiti//$ubnt
  ssh admin@$ubnt "$comando" > /home/ftp_backup/ubiquiti/bkp-ubnt-$ubnt-$dia.cfg
 done
 #FILE END
